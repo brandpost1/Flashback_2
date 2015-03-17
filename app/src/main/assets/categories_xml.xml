@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+
+<categories>
+    <category>
+        <category_id>1</category_id>
+        <category_name>Dator och IT</category_name>
+        <category_link>https&#58;&#47;&#47;www&#46;flashback&#46;org&#47;f4</category_link>
+        <color>#7b98af</color>
+    </category>
+
+    <category>
+        <category_id>2</category_id>
+        <category_name>Droger</category_name>
+        <category_link>https&#58;&#47;&#47;www&#46;flashback&#46;org&#47;f3</category_link>
+        <color>#719c79</color>
+    </category>
+
+    <category>
+        <category_id>3</category_id>
+        <category_name>Fordon &amp; trafik</category_name>
+        <category_link>https&#58;&#47;&#47;www&#46;flashback&#46;org&#47;f446</category_link>
+        <color>#EAA75C</color>
+    </category>
+
+    <category>
+        <category_id>4</category_id>
+        <category_name>Hem&#44; bostad &amp; familj</category_name>
+        <category_link>https&#58;&#47;&#47;www&#46;flashback&#46;org&#47;f464</category_link>
+        <color>#C10000</color>
+    </category>
+
+    <category>
+        <category_id>5</category_id>
+        <category_name>Kultur &amp; media</category_name>
+        <category_link>https&#58;&#47;&#47;www&#46;flashback&#46;org&#47;f7</category_link>
+        <color>#a12553</color>
+    </category>
+
+    <category>
+        <category_id>6</category_id>
+        <category_name>Livsstil</category_name>
+        <category_link>https&#58;&#47;&#47;www&#46;flashback&#46;org&#47;f126</category_link>
+        <color>#814f86</color>
+    </category>
+
+    <category>
+        <category_id>7</category_id>
+        <category_name>Mat&#44; dryck &amp; tobak</category_name>
+        <category_link>https&#58;&#47;&#47;www&#46;flashback&#46;org&#47;f295</category_link>
+        <color>#c75858</color>
+    </category>
+
+    <category>
+        <category_id>8</category_id>
+        <category_name>Politik</category_name>
+        <category_link>https&#58;&#47;&#47;www&#46;flashback&#46;org&#47;f305</category_link>
+        <color>#A5590A</color>
+    </category>
+
+    <category>
+        <category_id>9</category_id>
+        <category_name>Resor</category_name>
+        <category_link>https&#58;&#47;&#47;www&#46;flashback&#46;org&#47;f272</category_link>
+        <color>#00689E</color>
+    </category>
+
+    <category>
+        <category_id>10</category_id>
+        <category_name>Samhälle</category_name>
+        <category_link>https&#58;&#47;&#47;www&#46;flashback&#46;org&#47;f8</category_link>
+        <color>#FF7F00</color>
+    </category>
+
+    <category>
+        <category_id>11</category_id>
+        <category_name>Sex</category_name>
+        <category_link>https&#58;&#47;&#47;www&#46;flashback&#46;org&#47;f5</category_link>
+        <color>#FF1E7B</color>
+    </category>
+
+    <category>
+        <category_id>12</category_id>
+        <category_name>Sport &amp; träning</category_name>
+        <category_link>https&#58;&#47;&#47;www&#46;flashback&#46;org&#47;f308</category_link>
+        <color>#690c07</color>
+    </category>
+
+    <category>
+        <category_id>13</category_id>
+        <category_name>Vetenskap &amp; humanoira</category_name>
+        <category_link>https&#58;&#47;&#47;www&#46;flashback&#46;org&#47;f102</category_link>
+        <color>#f1a400</color>
+    </category>
+
+    <category>
+        <category_id>14</category_id>
+        <category_name>Övrigt</category_name>
+        <category_link>https&#58;&#47;&#47;www&#46;flashback&#46;org&#47;f6</category_link>
+        <color>#999999</color>
+    </category>
+
+    <category>
+        <category_id>15</category_id>
+        <category_name>Om Flashback</category_name>
+        <category_link>https&#58;&#47;&#47;www&#46;flashback&#46;org&#47;f182</category_link>
+        <color>#0c0201</color>
+    </category>
+</categories>
