@@ -1,9 +1,11 @@
 package brandpost.dev.flashback_2;
 
+
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarDrawerToggle;
+
 
 import brandpost.dev.flashback_2.fragments.Fragment_Categories;
 

@@ -27,7 +27,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import brandpost.dev.flashback_2.ForumsActivity;
-import brandpost.dev.flashback_2.OnFragmentClickedListener;
 import brandpost.dev.flashback_2.R;
 
 /**

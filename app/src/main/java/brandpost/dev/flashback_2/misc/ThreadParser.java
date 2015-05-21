@@ -1,20 +1,25 @@
 package brandpost.dev.flashback_2.misc;
 
-import android.content.Context;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.nodes.Node;
 import org.jsoup.safety.Cleaner;
 import org.jsoup.safety.Whitelist;
 import org.jsoup.select.Elements;
-import org.jsoup.select.NodeVisitor;
+import org.w3c.dom.Node;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 
+import java.io.IOException;
+import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
 /**
  * Created by Viktor on 2014-07-03.
@@ -53,11 +58,15 @@ public class ThreadParser extends BaseParser {
         public String postUserRegistrationDate;
         public String postIndex;
 
+        public String postData;
+
+        public Post() {}
+
+        public void addPostAsString(String postAsString) {
+            postData = postAsString;
+            postData.replace("<body>", "<body author=\"" + postAuthor +"\" time=\"" + postDateTime + "\" usertype=\"" + postUserType + "\" postcount=\"" + postUserPostCount + "\" regdate=\"" + postUserRegistrationDate + "\" postindex=\"" + postIndex + "\" >");
+        }
     }
-
-
-    // Private members
-    private Context mContext;
 
     /**
      * Constructor
@@ -126,8 +135,11 @@ public class ThreadParser extends BaseParser {
 	            // Surround name of the quotee [newline]
 	            postMessage.select("div.post-quote-holder table.p2-4 tbody tr td.alt2.post-quote strong").before("{quoter_name}").after("{/quoter_name}");
 
+                // Remove link in quote header
+                postMessage.select("div.post-quote-holder table.p2-4 tbody tr td.alt2.post-quote a").remove();
+
 	            // Surround regular spoilers and spoilers within quotes
-	            postMessage.select("div.post_message > div > div.alt2.post-bbcode-spoiler").before("{spoilertext}").after("{/spoilertext}");
+	            postMessage.select("div.alt2.post-bbcode-spoiler").before("{spoilertext}").after("{/spoilertext}");
 
 	            // Remove quote header ("Citat:")
 	            postMessage.select("div.post-quote-holder > div.smallfont.post-quote-title").remove();
@@ -165,21 +177,16 @@ public class ThreadParser extends BaseParser {
 	            postAsString = postAsString.replace("{phptag}", "<phptag>").replace("{/phptag}", "</phptag>");
 	            postAsString = postAsString.replace("{codetag}", "<codetag>").replace("{/codetag}", "</codetag>");
 
+                postAsString = postAsString.substring(postAsString.indexOf("<body>"), postAsString.indexOf("</body>") + 7);
+                postAsString = postAsString.replace("[newline]", "\n \n");
+                postAsString = postAsString.replace("Ursprungligen postat av", "");
+                postAsString = postAsString.replace("&nbsp;", " ");
+                postAsString.trim();
+
 	            // Re-parse the string representation of the post
-	            Document cleanedPost = Jsoup.parseBodyFragment(postAsString);
-	            cleanedPost.outputSettings(new Document.OutputSettings().indentAmount(4).prettyPrint(true));
+	            //Document cleanedPost = Jsoup.parseBodyFragment(postAsString);
 
-	            cleanedPost.traverse(new NodeVisitor() {
-		            @Override
-		            public void head(Node node, int depth) {
-
-		            }
-
-		            @Override
-		            public void tail(Node node, int depth) {
-
-		            }
-	            });
+                tempPost.addPostAsString(postAsString);
 
                 threadPage.threadPosts.add(tempPost);
             }
@@ -192,14 +199,19 @@ public class ThreadParser extends BaseParser {
     }
 
 	private void cleanLinks(Elements message) {
-		for (int i = 0; i < message.select("td.alt1.post-right div.post_message a").size(); i++) {
-			String text = message.select("td.alt1.post-right div.post_message a").get(i).attr("href");
-			if (!text.contains("flashback.org") && text.startsWith("/leave.php") && !(text.length() < 14)) {
+        int numlinks = message.select("a").size();
+		for (int i = 0; i < numlinks; i++) {
+			String text = message.select("a").get(i).attr("href");
+            // https://www.flashback.org/leave.php?u=http://www.idg.se/2.1085/1.114400/operatrerna-blockerar-pirate-bay
+            // Rewrites to
+            // http://www.idg.se/2.1085/1.114400/operatrerna-blockerar-pirate-bay
+
+			if (text.startsWith("https://www.flashback.org/leave.php?u=")) {
 				try {
-					text = text.substring(13);
+					text = text.substring(38);
 				} catch (IndexOutOfBoundsException e) {
 					e.printStackTrace();
-					text = "[Trasig länk]";
+					text = "[[APP] - Fel vid länkomskrivning]";
 				}
 			}
 
@@ -208,8 +220,9 @@ public class ThreadParser extends BaseParser {
 			} catch (UnsupportedEncodingException e) {
 				throw new AssertionError("UTF-8 is unknown");
 			}
+            text = text.replace("&amp;", "{amp}");
 
-			message.select("td.alt1.post-right div.post_message a").get(i).text(text);
+			message.select("a").get(i).text(text);
 		}
 	}
 }

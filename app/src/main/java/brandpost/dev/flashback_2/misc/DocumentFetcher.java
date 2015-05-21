@@ -48,6 +48,7 @@ public class DocumentFetcher extends AsyncTask<String, String, Object> {
     @Override
     protected Object doInBackground(String... url) {
         if(mCallback == null) return null;
+
         Document document = null;
         Object parsedContent = null;
 
@@ -64,7 +65,8 @@ public class DocumentFetcher extends AsyncTask<String, String, Object> {
     @Override
     protected void onPostExecute(Object parsedDocument) {
         super.onPostExecute(parsedDocument);
-        mCallback.onDocumentFetched(parsedDocument);
+        if(mCallback != null)
+            mCallback.onDocumentFetched(parsedDocument);
     }
 
 	/**

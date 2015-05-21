@@ -8,6 +8,8 @@ import android.widget.ScrollView;
 
 import java.util.ArrayList;
 
+import brandpost.dev.flashback_2.R;
+
 /**
  * Created by Viktor on 2014-12-19.
  */
@@ -72,7 +74,8 @@ public class MyScrollView extends ScrollView {
 
     public void showHeader(boolean fast) {
         if(mHeader != null && mAnchor != null) {
-            // Show Toolbar
+
+            // Show Header
             headerHidden = false;
 
             mHeader.animate()
@@ -85,7 +88,8 @@ public class MyScrollView extends ScrollView {
 
     public void hideHeader(boolean fast) {
         if(mHeader != null && mAnchor != null) {
-            // Hide Toolbar
+
+            // Show Header
             headerHidden = true;
 
             mHeader.animate()
@@ -172,4 +176,9 @@ public class MyScrollView extends ScrollView {
 	public interface OnReachedBottomListener {
 		public void onBottomReached();
 	}
+
+    public static interface HeaderFooterProvider {
+        public View getHeader();
+        public ArrayList<View> getFooter();
+    }
 }

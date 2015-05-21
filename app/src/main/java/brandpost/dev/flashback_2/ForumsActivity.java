@@ -39,8 +39,7 @@ public class ForumsActivity extends BaseActivity {
 			mForumTitle = savedInstanceState.getString("Name");
 		}
 
-		((TextView)findViewById(R.id.toolbar_title)).setText(mForumTitle);
-
+        setActivityTitle(mForumTitle);
 	}
 
 }

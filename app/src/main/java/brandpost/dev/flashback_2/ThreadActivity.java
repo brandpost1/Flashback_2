@@ -17,16 +17,18 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewOutlineProvider;
 
+import org.jsoup.Connection;
+
 import java.util.ArrayList;
 
+import brandpost.dev.flashback_2.customviews.MyScrollView;
 import brandpost.dev.flashback_2.fragments.Fragment_ThreadPage;
 
 /**
  * Created by Viktor on 2014-12-12.
  */
-public class ThreadActivity extends ActionBarActivity implements Fragment_ThreadPage.HeaderFooterProvider {
+public class ThreadActivity extends BaseActivity implements MyScrollView.HeaderFooterProvider {
 
-    private Toolbar mToolbar;
     private View mNewPostButton;
 	private View mPageIndicator;
 
@@ -41,11 +43,10 @@ public class ThreadActivity extends ActionBarActivity implements Fragment_Thread
         setContentView(R.layout.thread_layout);
 
         /**
-         * Setup Toolbar
+         * ReSetup Toolbar
          */
-
         mToolbar = (Toolbar) findViewById(R.id.thread_toolbar);
-        mToolbar.setTitle("Rubriken på tråden");
+        setActivityTitle("Rubriken på tråden");
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -62,9 +63,6 @@ public class ThreadActivity extends ActionBarActivity implements Fragment_Thread
          */
 
         mNewPostButton = findViewById(R.id.addButton);
-
-
-
 
         // Lollipop specific
         if(android.os.Build.VERSION.SDK_INT >= 21) {
@@ -136,6 +134,8 @@ public class ThreadActivity extends ActionBarActivity implements Fragment_Thread
         return super.onOptionsItemSelected(item);
     }
 
+    private int NUM_PAGES = 1;
+
     private class ScrollThreadPagerAdapter extends FragmentStatePagerAdapter {
         public ScrollThreadPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -149,7 +149,7 @@ public class ThreadActivity extends ActionBarActivity implements Fragment_Thread
 
         @Override
         public int getCount() {
-            return 1;
+            return NUM_PAGES;
         }
     }
 }

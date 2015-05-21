@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import brandpost.dev.flashback_2.BaseActivity;
 import brandpost.dev.flashback_2.R;
 import brandpost.dev.flashback_2.ThreadActivity;
 import brandpost.dev.flashback_2.customviews.MyScrollView;
@@ -27,7 +28,7 @@ import brandpost.dev.flashback_2.misc.ForumParser;
  */
 public class Fragment_ThreadsPage extends Fragment {
 
-	private Fragment_ThreadPage.HeaderFooterProvider mCallback;
+	private MyScrollView.HeaderFooterProvider mCallback;
 
 	private String mUrl;
 	private int mPage;
@@ -76,6 +77,7 @@ public class Fragment_ThreadsPage extends Fragment {
 		if (isVisibleToUser) {
 			if(mScrollView != null) {
 				mScrollView.showFooter(true);
+                mScrollView.showHeader(true);
 			}
 		}
 	}
@@ -84,7 +86,7 @@ public class Fragment_ThreadsPage extends Fragment {
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
 		try {
-			mCallback = (Fragment_ThreadPage.HeaderFooterProvider)activity;
+			mCallback = (MyScrollView.HeaderFooterProvider)activity;
 		} catch (ClassCastException e) {
 			System.out.println("Activity must implement the HeaderFooterProvider-interface.");
 		}
@@ -119,6 +121,8 @@ public class Fragment_ThreadsPage extends Fragment {
 
 		mProgress = (ProgressBar)mContentView.findViewById(R.id.progressbar);
 		mScrollView = (MyScrollView)mContentView.findViewById(R.id.scroller);
+
+        mScrollView.setHeaderView(mCallback.getHeader());
 
 		for(View v : mCallback.getFooter()) {
 			mScrollView.addFooterView(v);
@@ -261,16 +265,17 @@ public class Fragment_ThreadsPage extends Fragment {
 			threadcontainer.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					openThread(thread);
+					openThread(thread, false);
 				}
 			});
 
+            if(mAddedItems == 0) mScrollView.setHeaderAnchor(threadcontainer);
 			mAddedItems++;
 			container.addView(threadcontainer);
 		}
 	}
 
-	private void openThread(final ForumParser.Thread thread) {
+	private void openThread(final ForumParser.Thread thread, final boolean lastPage) {
 		Handler delay = new Handler();
 
 		/**
@@ -282,6 +287,7 @@ public class Fragment_ThreadsPage extends Fragment {
 				Bundle args = new Bundle();
 				args.putString("Name", thread.mTitle);
 				args.putString("Url", thread.mUrl);
+                args.putBoolean("LastPage", lastPage);
 
 				Intent intent = new Intent(getActivity(), ThreadActivity.class);
 				intent.putExtras(args);

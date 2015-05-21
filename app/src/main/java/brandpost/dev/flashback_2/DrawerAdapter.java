@@ -45,7 +45,7 @@ public class DrawerAdapter extends BaseAdapter {
     public DrawerAdapter(Context context) {
 
         mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        mList = new ArrayList<DrawerItem>();
+        mList = new ArrayList<>();
 
         // Since refreshing refuses to work properly
 
@@ -119,6 +119,7 @@ public class DrawerAdapter extends BaseAdapter {
                     break;
             }
         }
+
         switch (type) {
             case DRAWER_ITEM:
                 itemText = (TextView)view.findViewById(R.id.navigationdrawer_item_text);

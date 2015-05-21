@@ -14,10 +14,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewOutlineProvider;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import brandpost.dev.flashback_2.customviews.MyScrollView;
 import brandpost.dev.flashback_2.fragments.Fragment_ThreadPage;
 import brandpost.dev.flashback_2.fragments.Fragment_ThreadsPage;
 import brandpost.dev.flashback_2.misc.DocumentFetcher;
@@ -26,9 +28,8 @@ import brandpost.dev.flashback_2.misc.ForumParser;
 /**
  * Created by Viktor on 2014-12-28.
  */
-public class ThreadsActivity extends ActionBarActivity implements Fragment_ThreadPage.HeaderFooterProvider{
+public class ThreadsActivity extends BaseActivity implements MyScrollView.HeaderFooterProvider {
 
-	private Toolbar mToolbar;
 	private int mNumberOfPages = 0;
 	private String mForumName = "";
 	private String mForumUrl = "";
@@ -71,6 +72,7 @@ public class ThreadsActivity extends ActionBarActivity implements Fragment_Threa
 				mPageIndicator.setText(position + 1 + " / " + (mNumberOfPages == 0 ? "?" : mNumberOfPages));
 			}
 		});
+        mViewPager.setOffscreenPageLimit(1);
 		mPagerAdapter = new ForumPagePagerAdapter(getSupportFragmentManager());
 		mViewPager.setAdapter(mPagerAdapter);
 
@@ -116,11 +118,11 @@ public class ThreadsActivity extends ActionBarActivity implements Fragment_Threa
 		}
 
 		/**
-		 * Setup Toolbar
+		 * ReSetup Toolbar
 		 */
 		mToolbar = (Toolbar) findViewById(R.id.forum_toolbar);
-		mToolbar.setTitle(mForumName);
 		setSupportActionBar(mToolbar);
+        setActivityTitle(mForumName);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setHomeButtonEnabled(true);
 
@@ -191,7 +193,8 @@ public class ThreadsActivity extends ActionBarActivity implements Fragment_Threa
 	}
 
 	@Override
-	public ArrayList<View> getFooter() {
+	public ArrayList<View> getFooter()
+    {
 		ArrayList<View> footer = new ArrayList<>();
 		footer.add(mPageIndicator);
 		footer.add(mNewThreadButton);

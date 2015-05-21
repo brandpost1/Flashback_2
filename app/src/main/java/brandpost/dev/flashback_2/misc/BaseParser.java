@@ -43,6 +43,13 @@ public abstract class BaseParser<T> {
     protected ErrorCallback mErrorCallback;
 
     /**
+     * Constructor
+     */
+    public BaseParser() {
+
+    }
+
+    /**
      * Abstract methods
      */
     public abstract T parse(Document document);
