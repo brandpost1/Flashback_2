@@ -74,5 +74,30 @@
         android:layout_marginBottom="30dp"
         android:visibility="gone"/>
 
+    <View
+        android:background="#64f8f8ff"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true"
+        android:onClick="dismissPagePicker"
+        android:id="@+id/overlay"
+        android:visibility="gone"/>
+    <brandpost.dev.flashback_2.customviews.HorizontalPagePicker
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:gravity="center_horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginBottom="-176dp"
+        android:elevation="8dp"
+        android:background="@color/GhostWhite"
+        android:clickable="true"
+        android:id="@+id/pagepicker">
+
+    </brandpost.dev.flashback_2.customviews.HorizontalPagePicker>
+
+
 </FrameLayout>
 <!-- From: file:/D:/Viktor1/AndroidStudioProjects/Flashback_2/app/src/main/res/layout/thread_layout.xml -->

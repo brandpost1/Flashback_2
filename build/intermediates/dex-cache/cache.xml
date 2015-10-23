@@ -30,11 +30,11 @@
         <dex dex="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Paid\debug\classes-b60b3b87764ced25aff33fafa23940e9b75284c6.jar" />
     </item>
     <item
-        jar="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\exploded-aar\com.android.support\design\22.2.0\classes.jar"
+        jar="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.5.0\classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
-        <dex dex="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Paid\debug\classes-b9e58f918d8efc4498e256e3fb2dfa3b8bebecd1.jar" />
+        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
+        <dex dex="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Free\release\classes-16bd1aa38cf26571c8dee300359d0a6bd72dde0b.jar" />
     </item>
     <item
         jar="D:\Viktor\.gradle\caches\modules-2\files-2.1\org.jsoup\jsoup\1.8.1\1eb6690b0c629d7000c77a72df5e822fb974f521\jsoup-1.8.1.jar"
@@ -44,11 +44,11 @@
         <dex dex="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Paid\debug\jsoup-1.8.1-56b5d3d6088a75ace1713675d5978f637c68c540.jar" />
     </item>
     <item
-        jar="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.5.0\classes.jar"
+        jar="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\exploded-aar\com.android.support\design\22.2.0\classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
-        <dex dex="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Free\release\classes-16bd1aa38cf26571c8dee300359d0a6bd72dde0b.jar" />
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Paid\debug\classes-b9e58f918d8efc4498e256e3fb2dfa3b8bebecd1.jar" />
     </item>
     <item
         jar="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\classes.jar"

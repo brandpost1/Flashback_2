@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import brandpost.dev.flashback_2.R;
 
@@ -39,14 +40,11 @@ public class HorizontalPagePicker extends LinearLayout {
         doStuff(context);
     }
 
-    float leftx;
-    float midx;
-    float rightx;
     float lefty;
     float midy;
     float righty;
 
-    private void doStuff(Context context) {
+    private void doStuff(final Context context) {
 
         LayoutInflater inflater = LayoutInflater.from(context);
         inflater.inflate(R.layout.pagepicker_layout, this, true);
@@ -75,9 +73,7 @@ public class HorizontalPagePicker extends LinearLayout {
         mGotoButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-
+                /*
                 findViewById(R.id.right).animate()
                         .scaleX(1.0f)
                         .scaleY(1.0f)
@@ -95,6 +91,8 @@ public class HorizontalPagePicker extends LinearLayout {
                         .scaleY(1.6f)
                         .y(midy)
                         .setDuration(100);
+                 */
+                Toast.makeText(context, "Fungerar inte än.", Toast.LENGTH_SHORT).show();
             }
         });
         mRightButton.setOnClickListener(new OnClickListener() {

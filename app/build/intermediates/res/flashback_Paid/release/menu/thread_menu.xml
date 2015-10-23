@@ -9,14 +9,5 @@
     <item   android:id="@+id/threadSettings"
             android:title="Inställningar"
             app:showAsAction="never"
-
-            />
-    <item   android:id="@+id/helpFeedback"
-            android:title="Hjälp &amp; Feedback"
-            app:showAsAction="never"
-            />
-    <item   android:id="@+id/closeThread"
-            android:title="Stäng"
-            app:showAsAction="never"
             />
 </menu><!-- From: file:/D:/Viktor1/AndroidStudioProjects/Flashback_2/app/src/main/res/menu/thread_menu.xml -->

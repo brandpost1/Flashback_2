@@ -534,6 +534,8 @@
     <!-- From: file:/D:/Viktor1/AndroidStudioProjects/Flashback_2/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="hello_world">Hello world!</string>
+    <string name="leftarrows"><![CDATA[<<]]></string>
+    <string name="rightarrows"><![CDATA[>>]]></string>
     <!-- From: file:/D:/Viktor1/AndroidStudioProjects/Flashback_2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <string name="status_bar_notification_info_overflow">999+</string>

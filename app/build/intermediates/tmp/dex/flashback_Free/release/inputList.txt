@@ -1,6 +1,7 @@
 D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\classes\flashback_Free\release
 D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Free\release\support-annotations-22.2.0-f92b49077601d1abcb3434ffc25e9c674356073b.jar
 D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Free\release\classes-730b79be21977a7c4a1cf8f77f5bd8698c9de120.jar
+D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Free\release\gson-2.4-a113ec256940b038788d59341c8b68bc5577ca24.jar
 D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Free\release\classes-b9e58f918d8efc4498e256e3fb2dfa3b8bebecd1.jar
 D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Free\release\internal_impl-22.2.0-cc2d2e91361bc5ab85b308207c0549f62bf62600.jar
 D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Free\release\jsoup-1.8.1-56b5d3d6088a75ace1713675d5978f637c68c540.jar
