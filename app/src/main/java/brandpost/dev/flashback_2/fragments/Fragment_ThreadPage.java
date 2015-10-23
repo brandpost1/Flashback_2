@@ -2,8 +2,11 @@ package brandpost.dev.flashback_2.fragments;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -39,45 +42,54 @@ public class Fragment_ThreadPage extends Fragment {
 
     private LinearLayout mCardContainer;
     private ProgressBar mProgressBar;
-    private MyScrollView scroll;
+    private MyScrollView mScrollView;
 	private MyScrollView.HeaderFooterProvider mCallback;
+
+    private int mAddedPosts = 0;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		if(savedInstanceState == null) {
-
-			DocumentFetcher.DocumentCallback<ThreadParser.ThreadPage> callback = new DocumentFetcher.DocumentCallback<ThreadParser.ThreadPage>() {
-				@Override
-				public void onDocumentFetched(ThreadParser.ThreadPage document) {
-                    if(getActivity() != null) {
-                        mProgressBar.setVisibility(View.GONE);
-                        for (ThreadParser.Post post : document.threadPosts) {
-                            try {
-                                addPost(post);
-                            } catch (ParserConfigurationException e) {
-                                e.printStackTrace();
-                            } catch (SAXException e) {
-                                e.printStackTrace();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
+        DocumentFetcher.DocumentCallback<ThreadParser.ThreadPage> callback = new DocumentFetcher.DocumentCallback<ThreadParser.ThreadPage>() {
+            @Override
+            public void onDocumentFetched(ThreadParser.ThreadPage document) {
+                if(getActivity() != null) {
+                    mProgressBar.setVisibility(View.GONE);
+                    for (ThreadParser.Post post : document.threadPosts) {
+                        try {
+                            addPost(post);
+                        } catch (ParserConfigurationException e) {
+                            e.printStackTrace();
+                        } catch (SAXException e) {
+                            e.printStackTrace();
+                        } catch (IOException e) {
+                            e.printStackTrace();
                         }
                     }
-				}
-			};
 
-            Bundle activityBundle = getArguments();
+                    // Show Footer again
+                    for(View v : mCallback.getFooter()) {
+                        v.setVisibility(View.VISIBLE);
+                    }
+                }
+            }
+        };
 
-            String baseUrl = "https://www.flashback.org/showthread.php?";
-            String threadId = "t=" + "1452366";
-            String postsPerPage = "&pp=" + "12";
-            String currentPage = "&page=" + "3";
+        Bundle activityBundle = getArguments();
 
-			DocumentFetcher fetcher = new DocumentFetcher(callback, ThreadParser.class);
-			fetcher.execute(baseUrl + threadId + postsPerPage + currentPage);
-		}
+        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
+
+
+        String baseUrl = "https://www.flashback.org/showthread.php?";
+        String threadId = "t=" + activityBundle.getString("Id");
+        String postsPerPage = "&pp=" + myPreferences.getString("MAX_POSTS_PER_PAGE", "12");
+        String currentPage = "&page=" + activityBundle.getInt("Page", 1);
+        String fullUrl = baseUrl + threadId + postsPerPage + currentPage;
+        //String fullUrl = "https://www.flashback.org/t1672095p13";
+
+        DocumentFetcher fetcher = new DocumentFetcher(callback, ThreadParser.class);
+        fetcher.execute(fullUrl);
 	}
 
     @Override
@@ -87,6 +99,15 @@ public class Fragment_ThreadPage extends Fragment {
         mCardContainer = (LinearLayout)root.findViewById(R.id.card_container);
         mProgressBar = (ProgressBar)root.findViewById(R.id.progressbar);
         mProgressBar.setVisibility(View.VISIBLE);
+
+        mScrollView = (MyScrollView) root.findViewById(R.id.scroller);
+
+        mScrollView.setHeaderView(mCallback.getHeader());
+
+        for(View v : mCallback.getFooter()) {
+            mScrollView.addFooterView(v);
+        }
+
         return root;
     }
 
@@ -94,19 +115,11 @@ public class Fragment_ThreadPage extends Fragment {
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
         if (isVisibleToUser) {
-            if(scroll != null) {
-	            scroll.showHeader(true);
-                scroll.showFooter(true);
+            if(mScrollView != null) {
+	            mScrollView.showHeader(true);
+                mScrollView.showFooter(true);
             }
         }
-    }
-
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        scroll = (MyScrollView) view.findViewById(R.id.scroller);
-
     }
 
     @TargetApi(Build.VERSION_CODES.KITKAT)
@@ -125,7 +138,7 @@ public class Fragment_ThreadPage extends Fragment {
 
             @Override
             public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-
+                // Depth: 1 - Element is directly below <body>
                 switch (localName) {
                     case "quote":
                         parent = getActivity().getLayoutInflater().inflate(R.layout.post_root_quote, (LinearLayout)postContent, false);
@@ -155,55 +168,61 @@ public class Fragment_ThreadPage extends Fragment {
 
                 if(depth > 1) {
 
-                    final View v = mViews.pop();
+                    final View view = mViews.pop();
                     mTypes.pop();
 
                     if(localName.equals("spoiler")) {
-                        final int childCount = ((LinearLayout) v.findViewById(R.id.container)).getChildCount();
+                        final int childCount = ((LinearLayout) view.findViewById(R.id.container)).getChildCount();
                         View spoilerButtonContainer = null;
-                        for (int i = 0; i < ((LinearLayout)v).getChildCount(); i++) {
-                            if(((LinearLayout) v).getChildAt(i).getId() == R.id.spoilerButton_container) {
-                              spoilerButtonContainer = ((LinearLayout) v).getChildAt(i);
+                        for (int i = 0; i < ((LinearLayout)view).getChildCount(); i++) {
+                            if(((LinearLayout) view).getChildAt(i).getId() == R.id.spoilerButton_container) {
+                              spoilerButtonContainer = ((LinearLayout) view).getChildAt(i);
                             }
                         }
 
                         View spoilerButton = spoilerButtonContainer.findViewById(R.id.spoilerButton);
                         spoilerButton.setOnClickListener(new View.OnClickListener() {
                             @Override
-                            public void onClick(View view) {
+                            public void onClick(View viewSpoilerButton) {
                                 View container = null;
                                 // Findviewbyid did not get the correct view due to the nesting, so had to locate it manually instead.
                                 // Refer to view hierarchy of the spoiler layout for details
-                                for (int i = 0; i < ((LinearLayout) v).getChildCount(); i++) {
-                                    if(((LinearLayout) v).getChildAt(i).getId() == R.id.spoiler_outer) {
-                                        container = ((LinearLayout)((LinearLayout) v).getChildAt(i)).getChildAt(1);
+                                for (int i = 0; i < ((LinearLayout) view).getChildCount(); i++) {
+                                    if(((LinearLayout) view).getChildAt(i).getId() == R.id.spoiler_outer) {
+                                        container = ((LinearLayout)((LinearLayout) view).getChildAt(i)).getChildAt(1);
+                                        // container now equals the box containing the spoiler text
                                     }
                                 }
+
+                                // Hide or show direct child views of the spoiler-container depending on the state of the button
                                 for (int i = 0; i < ((LinearLayout) container).getChildCount(); i++) {
-                                    if(((Button)view).getText().equals("Visa")) {
+                                    if(((Button) viewSpoilerButton).getText().equals("Visa")) {
                                         ((LinearLayout) container).getChildAt(i).setVisibility(View.VISIBLE);
-                                    } else if (((Button)view).getText().equals("Dölj")){
+                                    } else if (((Button) viewSpoilerButton).getText().equals("Dölj")){
                                         ((LinearLayout) container).getChildAt(i).setVisibility(View.GONE);
                                     }
                                 }
-                                if(((Button)view).getText().equals("Visa")) {
-                                    ((Button) view).setText("Dölj");
-                                } else if (((Button)view).getText().equals("Dölj")){
-                                    ((Button) view).setText("Visa");
+
+                                // Swap button text if clicked
+                                if(((Button)viewSpoilerButton).getText().equals("Visa")) {
+                                    ((Button) viewSpoilerButton).setText("Dölj");
+                                } else if (((Button)viewSpoilerButton).getText().equals("Dölj")){
+                                    ((Button) viewSpoilerButton).setText("Visa");
                                 }
 
                             }
                         });
 
+                        // Hide every child initially in the spoiler
                         for (int i = 0; i < childCount; i++) {
-                            ((LinearLayout) v.findViewById(R.id.container)).getChildAt(i).setVisibility(View.GONE);
+                            ((LinearLayout) view.findViewById(R.id.container)).getChildAt(i).setVisibility(View.GONE);
                         }
                     }
 
                     if(mViews.empty()) {
-                        ((ViewGroup)postContent).addView(v);
+                        ((ViewGroup)postContent).addView(view);
                     } else {
-                        ((ViewGroup) mViews.peek().findViewById(R.id.container)).addView(v);
+                        ((ViewGroup) mViews.peek().findViewById(R.id.container)).addView(view);
                     }
                 }
 
@@ -245,12 +264,15 @@ public class Fragment_ThreadPage extends Fragment {
         };
 
         saxParser.parse(new ByteArrayInputStream(post.postData.getBytes(StandardCharsets.UTF_8)), handler);
+        //saxParser.parse(new ByteArrayInputStream(getString(R.string.test_thread).getBytes(StandardCharsets.UTF_8)), handler);
 
         ((TextView) postContainer.findViewById(R.id.post_author)).setText(post.postAuthor);
         ((TextView)postContainer.findViewById(R.id.post_membertype)).setText(post.postUserType);
         ((TextView)postContainer.findViewById(R.id.post_date_time)).setText(post.postDateTime);
 
 
+        if(mAddedPosts == 0) mScrollView.setHeaderAnchor(postContainer);
+        mAddedPosts++;
 
         mCardContainer.addView(postContainer);
         return postContainer;

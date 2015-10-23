@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "brandpost.dev.flashback_2"
+        minSdkVersion 14
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+
+    productFlavors {
+        flashback_Free {
+            applicationId "com.dev.flashback_v04"
+        }
+
+        flashback_Paid {
+            applicationId "com.brandpost.flashback"
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:design:22.2.0'
+    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.android.support:support-v4:22.2.0'
+    compile 'org.jsoup:jsoup:1.8.1'
+    compile 'com.android.support:cardview-v7:22.2.0'
+    compile 'com.google.code.gson:gson:2.4'
+    flashback_FreeCompile 'com.google.android.gms:play-services-ads:7.5.0'
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
+    android:id="@+id/contentview_container"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:elevation="3dp"
+        android:visibility="gone"/>
+    <brandpost.dev.flashback_2.customviews.MyScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/scroller"
+        android:fillViewport="true"
+        android:clipToPadding="false">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:id="@+id/content"
+                android:background="?attr/Forum_Background"
+                android:orientation="vertical"
+                android:paddingTop="3dp"
+                android:animateLayoutChanges="true"/>
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressbar"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-72dp"
+                android:visibility="visible"
+                style="@android:style/Widget.DeviceDefault.ProgressBar.Large"
+                />
+        </RelativeLayout>
+    </brandpost.dev.flashback_2.customviews.MyScrollView>
+</LinearLayout><!-- From: file:/D:/Viktor1/AndroidStudioProjects/Flashback_2/app/src/main/res/layout/fragment_currentthreads.xml -->

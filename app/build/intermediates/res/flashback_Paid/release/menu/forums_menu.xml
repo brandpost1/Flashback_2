@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item   android:id="@+id/editBlocks"
+            android:title="Visa blockering"
+            app:showAsAction="never"
+            android:checkable="true"
+            android:checked="false"
+        />
+</menu><!-- From: file:/D:/Viktor1/AndroidStudioProjects/Flashback_2/app/src/main/res/menu/forums_menu.xml -->

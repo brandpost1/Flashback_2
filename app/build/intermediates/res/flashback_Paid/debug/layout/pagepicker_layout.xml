@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/scrollayout"
+        android:gravity="center_horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textSize="20dp"
+            android:id="@+id/left"
+            android:gravity="center_vertical"
+            android:text="167"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textSize="32dp"
+           android:gravity="bottom"
+            android:id="@+id/mid"
+            android:text="168"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:id="@+id/right"
+            android:textSize="20dp"
+            android:gravity="center_vertical"
+            android:text="169"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            style="?attr/Borderless_Button"
+            android:layout_width="wrap_content"
+            android:minWidth="88dp"
+            android:layout_height="wrap_content"
+            android:text="@string/leftarrows"
+            android:textScaleX="0.6"
+            android:textSize="27dp"
+            android:id="@+id/previous" />
+        <Button
+            style="?attr/Borderless_Button"
+            android:layout_width="wrap_content"
+            android:minWidth="88dp"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:textSize="17dp"
+            android:id="@+id/gotobutton" />
+        <Button
+            style="?attr/Borderless_Button"
+            android:layout_width="wrap_content"
+            android:minWidth="88dp"
+            android:layout_height="wrap_content"
+            android:text="@string/rightarrows"
+            android:textScaleX="0.6"
+            android:textSize="27dp"
+            android:id="@+id/next" />
+    </LinearLayout>
+</merge><!-- From: file:/D:/Viktor1/AndroidStudioProjects/Flashback_2/app/src/main/res/layout/pagepicker_layout.xml -->

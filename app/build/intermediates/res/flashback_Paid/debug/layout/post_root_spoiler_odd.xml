@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/spoiler_outer">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/TextColor"
+            android:text="Spoiler:"
+            android:id="@+id/textView"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="@color/BurlyWood"
+            android:id="@+id/container">
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:id="@+id/spoilerButton_container"
+        android:background="@color/IndianRed">
+        <Button
+            style="?attr/Borderless_Button"
+            android:layout_width="wrap_content"
+            android:minWidth="88dp"
+            android:height="20dp"
+            android:text="Visa"
+            android:textStyle="bold"
+            android:layout_height="23dp"
+            android:id="@+id/spoilerButton" />
+    </LinearLayout>
+</LinearLayout><!-- From: file:/D:/Viktor1/AndroidStudioProjects/Flashback_2/app/src/main/res/layout/post_root_spoiler_odd.xml -->

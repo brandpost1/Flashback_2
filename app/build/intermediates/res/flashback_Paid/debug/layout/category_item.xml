@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <ImageView
+        android:layout_width="4dp"
+        android:layout_height="20dp"
+        android:background="@color/CornflowerBlue"
+        android:id="@+id/category_color"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="Large Text"
+        android:id="@+id/category_text"
+        android:layout_centerVertical="true"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:textColor="?attr/TextColor"
+        android:layout_toRightOf="@id/category_color"
+        />
+</RelativeLayout>
+
+<!-- From: file:/D:/Viktor1/AndroidStudioProjects/Flashback_2/app/src/main/res/layout/category_item.xml -->

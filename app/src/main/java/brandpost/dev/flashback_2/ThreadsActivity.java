@@ -9,18 +9,15 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewOutlineProvider;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import brandpost.dev.flashback_2.customviews.MyScrollView;
-import brandpost.dev.flashback_2.fragments.Fragment_ThreadPage;
 import brandpost.dev.flashback_2.fragments.Fragment_ThreadsPage;
 import brandpost.dev.flashback_2.misc.DocumentFetcher;
 import brandpost.dev.flashback_2.misc.ForumParser;
@@ -66,7 +63,7 @@ public class ThreadsActivity extends BaseActivity implements MyScrollView.Header
 		 * Setup ViewPager
 		 */
 		final ViewPager mViewPager = (ViewPager) findViewById(R.id.thread_viewpager);
-		mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+		mViewPager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
 			@Override
 			public void onPageSelected(int position) {
 				mPageIndicator.setText(position + 1 + " / " + (mNumberOfPages == 0 ? "?" : mNumberOfPages));
@@ -79,7 +76,7 @@ public class ThreadsActivity extends BaseActivity implements MyScrollView.Header
 		/**
 		 * Post new thread button
 		 */
-		mNewThreadButton = findViewById(R.id.addButton);
+		mNewThreadButton = findViewById(R.id.fab);
 
 		if(savedInstanceState == null) {
 			activityExtras = getIntent().getExtras();
@@ -140,7 +137,6 @@ public class ThreadsActivity extends BaseActivity implements MyScrollView.Header
 					switch (event.getActionMasked()) {
 						case MotionEvent.ACTION_DOWN:
 							mNewThreadButton.animate()
-									.translationZ(0)
 									.setStartDelay(0)   // Value carried over from "hide" animation delay in MyScrollView. Had to reset to 0 here
 									.scaleX(0.95f)
 									.scaleY(0.95f)
@@ -148,7 +144,6 @@ public class ThreadsActivity extends BaseActivity implements MyScrollView.Header
 							return true;
 						case MotionEvent.ACTION_UP:
 							mNewThreadButton.animate()
-									.translationZ(2)
 									.setStartDelay(0)   // Value carried over from "hide" animation delay in MyScrollView. Had to reset to 0 here
 									.scaleX(1.0f)
 									.scaleY(1.0f)

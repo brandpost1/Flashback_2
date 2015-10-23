@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="Borderless_Button" format="reference"/>
+    <attr name="TextColor" format="reference"/>
+    <attr name="TextColorSecondary" format="reference"/>
+    <attr name="OverFlowMenuStyle" format="reference"/>
+    <attr name="ToolbarTheme" format="reference"/>
+
+    <attr name="FooterButtons" format="reference"/>
+
+    /*
+        Categories Activity
+    */
+
+    <attr name="Categories_Background" format="reference"/>
+    <attr name="Category_Item_Background" format="reference"/>
+
+    /*
+        Category activity
+    */
+    <attr name="Category_Background" format="reference"/>
+    <attr name="Forum_Item_Background" format="reference"/>
+
+    /*
+        Forum activity
+    */
+    <attr name="Forum_Background" format="reference"/>
+    <attr name="Thread_Container_Background" format="reference"/>
+
+    /*
+        Thread Activity
+    */
+    <attr name="Thread_Background" format="reference"/>
+    <attr name="Post_Background" format="reference"/>
+
+</resources>

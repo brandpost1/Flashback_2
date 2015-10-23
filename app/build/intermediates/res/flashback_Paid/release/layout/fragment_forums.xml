@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:animateLayoutChanges="true"
+    android:background="?attr/Category_Background">
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressbar"
+        style="@android:style/Widget.DeviceDefault.ProgressBar.Large"
+        android:layout_gravity="center_horizontal|center_vertical" />
+
+    <ScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/scroller"
+        android:paddingTop="3dp"
+        android:clipToPadding="false">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/forumcard_container"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="3dp"
+            android:clipToPadding="false"
+            android:animateLayoutChanges="true">
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout><!-- From: file:/D:/Viktor1/AndroidStudioProjects/Flashback_2/app/src/main/res/layout/fragment_forums.xml -->

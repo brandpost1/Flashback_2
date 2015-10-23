@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?attr/colorAccent">
+    <item>
+        <shape
+            android:shape="rectangle">
+            <solid android:color="?android:colorAccent" />
+        </shape>
+    </item>
+</ripple><!-- From: file:/D:/Viktor1/AndroidStudioProjects/Flashback_2/app/src/main/res/drawable-v21/category_ripple.xml -->

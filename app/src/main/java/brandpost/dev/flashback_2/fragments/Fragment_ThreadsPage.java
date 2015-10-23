@@ -12,6 +12,7 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -116,7 +117,7 @@ public class Fragment_ThreadsPage extends Fragment {
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		mContentView = inflater.inflate(R.layout.fragment_threadspage, container, false);
 
 		mProgress = (ProgressBar)mContentView.findViewById(R.id.progressbar);
@@ -256,11 +257,20 @@ public class Fragment_ThreadsPage extends Fragment {
 			TextView lastactivity = (TextView) threadcontainer.findViewById(R.id.threadlastactivity);
 			TextView replies = (TextView) threadcontainer.findViewById(R.id.threadreplies);
 			TextView views = (TextView) threadcontainer.findViewById(R.id.threadviews);
+			Button lastPage = (Button) threadcontainer.findViewById(R.id.thread_gotolast);
+
 			title.setText(thread.mTitle);
 			author.setText(thread.mAuthor);
 			lastactivity.setText(thread.mLastActivity);
 			replies.setText("Svar: " + thread.mNumReplies);
 			views.setText("Visningar: " + thread.mNumViews);
+
+			lastPage.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					openThread(thread, true);
+				}
+			});
 
 			threadcontainer.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -286,8 +296,10 @@ public class Fragment_ThreadsPage extends Fragment {
 			public void run() {
 				Bundle args = new Bundle();
 				args.putString("Name", thread.mTitle);
-				args.putString("Url", thread.mUrl);
-                args.putBoolean("LastPage", lastPage);
+				args.putString("Id", thread.mId);
+				String page  = lastPage ? thread.mNumPages : "0";
+                args.putString("Page", page);
+				args.putInt("Num_Pages", Integer.valueOf(thread.mNumPages));
 
 				Intent intent = new Intent(getActivity(), ThreadActivity.class);
 				intent.putExtras(args);

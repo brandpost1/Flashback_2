@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:flashback="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+    <!-- The ViewPager -->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/thread_viewpager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        />
+
+    <!-- Toolbar -->
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/thread_toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:layout_gravity="top"
+        android:elevation="3dp"
+        flashback:titleTextAppearance="?android:attr/textAppearanceMedium"
+        flashback:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        flashback:popupTheme="?attr/OverFlowMenuStyle">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:paddingRight="10dp"
+            android:paddingLeft="5dp">
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_centerVertical="true"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="?attr/TextColor"/>
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <!-- Reply-button -->
+
+    <!-- Newthread-button -->
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fab"
+        flashback:borderWidth="0dp"
+        android:layout_gravity="bottom|start"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/ic_content_add"
+        flashback:fabSize="normal"
+        android:visibility="gone"
+        flashback:backgroundTint="?attr/FooterButtons"
+        />
+
+    <!-- Page indicator -->
+
+    <TextView
+        android:id="@+id/pageIndicator"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:elevation="2dp"
+        android:background="?attr/FooterButtons"
+        android:layout_gravity="bottom|center"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_marginBottom="30dp"
+        android:visibility="gone"/>
+
+    <View
+        android:background="#64f8f8ff"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true"
+        android:onClick="dismissPagePicker"
+        android:id="@+id/overlay"
+        android:visibility="gone"/>
+    <brandpost.dev.flashback_2.customviews.HorizontalPagePicker
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:gravity="center_horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginBottom="-176dp"
+        android:elevation="8dp"
+        android:background="@color/GhostWhite"
+        android:clickable="true"
+        android:id="@+id/pagepicker">
+
+    </brandpost.dev.flashback_2.customviews.HorizontalPagePicker>
+
+
+</FrameLayout>
+<!-- From: file:/D:/Viktor1/AndroidStudioProjects/Flashback_2/app/src/main/res/layout/thread_layout.xml -->

@@ -174,11 +174,11 @@ public class MyScrollView extends ScrollView {
     }
 
 	public interface OnReachedBottomListener {
-		public void onBottomReached();
+		void onBottomReached();
 	}
 
-    public static interface HeaderFooterProvider {
-        public View getHeader();
-        public ArrayList<View> getFooter();
+    public interface HeaderFooterProvider {
+        View getHeader();
+        ArrayList<View> getFooter();
     }
 }

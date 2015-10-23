@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationModel
+  ns = "http://schemas.android.com?import=com.android.tools.idea.editors.navigation.model.*">
+  <locations  
+    class = "java.util.ArrayList">
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.MenuState"      
+        className = "brandpost.dev.flashback_2.ThreadActivity"/>
+      <point      
+        x = "2928"      
+        y = "208"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "brandpost.dev.flashback_2.ThreadActivity"/>
+      <point      
+        x = "1664"      
+        y = "212"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "brandpost.dev.flashback_2.ThreadsActivity"/>
+      <point      
+        x = "343"      
+        y = "217"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "brandpost.dev.flashback_2.ForumsActivity"/>
+      <point      
+        x = "1597"      
+        y = "1616"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "brandpost.dev.flashback_2.MainActivity"/>
+      <point      
+        x = "2749"      
+        y = "1815"/>
+    </statePointEntry>
+  </locations>
+</navigationModel>

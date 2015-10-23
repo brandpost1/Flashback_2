@@ -2,6 +2,7 @@ package brandpost.dev.flashback_2;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
 import brandpost.dev.flashback_2.fragments.Fragment_Forums;
@@ -22,6 +23,10 @@ public class ForumsActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		setContentView(R.layout.forums_layout);
+		mToolbar = (Toolbar) findViewById(R.id.forums_toolbar);
+		setSupportActionBar(mToolbar);
 
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setHomeButtonEnabled(true);

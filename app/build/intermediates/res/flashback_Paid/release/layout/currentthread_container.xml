@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:flashback="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:elevation="3dp"
+    flashback:cardBackgroundColor="?attr/Thread_Container_Background"
+    flashback:cardCornerRadius="0dp"
+    android:layout_marginBottom="3dp"
+    android:foreground="?android:attr/selectableItemBackground">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="5dp">
+        <LinearLayout
+            android:id="@+id/forum_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="3dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/threadtitle"
+                android:text="Skillnaden mellan Magnet och Torrent?"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="?attr/TextColor"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="2dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forum - Fildelning"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="12dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="?attr/TextColor"
+                android:id="@+id/threadforum"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/forum_header"
+            android:padding="3dp">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_toLeftOf="@+id/open_forum">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Läsare: 1111"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textSize="12dp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="?attr/TextColorSecondary"
+                    android:id="@+id/threadreaders"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textSize="12dp"
+                    android:text="Svar: 1 456"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="?attr/TextColorSecondary"
+                    android:id="@+id/threadreplies"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textSize="12dp"
+                    android:text="Visningar: 196 342"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="?attr/TextColorSecondary"
+                    android:id="@+id/threadviews"/>
+            </LinearLayout>
+            <Button
+                style="?attr/Borderless_Button"
+                android:layout_width="wrap_content"
+                android:minWidth="88dp"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/thread_gotolast"
+                android:text="Visa\nForum"
+                android:id="@+id/open_forum" />
+            <Button
+                style="?attr/Borderless_Button"
+                android:layout_width="wrap_content"
+                android:minWidth="88dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text=">>"
+                android:textScaleX="0.6"
+                android:textSize="27dp"
+                android:id="@+id/thread_gotolast" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView><!-- From: file:/D:/Viktor1/AndroidStudioProjects/Flashback_2/app/src/main/res/layout/currentthread_container.xml -->

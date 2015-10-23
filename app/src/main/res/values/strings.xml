@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Flashback_2</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="test_thread">
+&quot;&lt;body&gt;
+  &lt;quote&gt;  &lt;quoter_name&gt; soulreaper&lt;/quoter_name&gt;
+&lt;spoiler&gt;
+Men eftersom det finns de som stör sig på det hela kanske man kunde ordna så att citat ifrån TS automatiskt hamnade i en spoiler-tag.
+	&lt;spoiler&gt;
+	Testspoiler i en spoiler
+		&lt;spoiler&gt;
+        ä;nnu en spoiler
+		&lt;/spoiler&gt;
+	Text i första innerspoilern
+	&lt;/spoiler&gt;
+&lt;/spoiler&gt;
+&lt;/quote&gt; Bra ide är det oavsett vem som nämnde det först.
+
+Förutsatt att spoilern placeras [i] rått[/i]
+
+
+
+ &lt;spoiler&gt; &lt;quote&gt;  &lt;quoter_name&gt; soulreaper&lt;/quoter_name&gt;  Nej det är ett dumt förslag av den anledningen att om tråden slås samman med en snarlik tråd så blir det sårt att veta om skribenten har svarat på få;rsta inlgget i den nya trden eller om denna svarat p ett inlgg i en frn brjan annan trd. Vidare r mina citeringar-funktionen en bra funktion som man ven som TS ska kunna dra nytta av.
+
+
+
+[b] Men eftersom det finns de som står sig på det hela kanske man kunde ordna så att citat ifrån TS automatiskt hamnade i en spoiler-tag.
+
+
+
+Edit: man kanske ska lsa resterande inlgg innan man svarar, jag var kort sagt inte frst p bollen med spoiler.[/b] &lt;/quote&gt; &lt;/spoiler&gt;
+
+Det finns inget mer irriterande n personer som stter spoiler kring hela inlgget s man inte ser att detr en citering.
+ &lt;/body&gt;&quot;
+    </string>
+    <string name="leftarrows"><![CDATA[<<]]></string>
+    <string name="rightarrows"><![CDATA[>>]]></string>
+</resources>

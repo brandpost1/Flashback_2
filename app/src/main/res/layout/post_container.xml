@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:flashback="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardview3"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:elevation="3dp"
+    flashback:cardBackgroundColor="?attr/Post_Background"
+    android:animateLayoutChanges="true"
+    flashback:cardCornerRadius="2dp"
+    android:layout_marginBottom="3dp">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
+        <RelativeLayout
+            android:id="@+id/post_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp">
+            <ImageView
+                android:id="@+id/post_avatar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/ic_launcher"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/post_author"
+                android:layout_toRightOf="@id/post_avatar"
+                android:text="TempName"
+                android:textStyle="bold"
+                android:textColor="?attr/TextColor"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="2dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/post_membertype"
+                android:layout_below="@id/post_author"
+                android:layout_toRightOf="@id/post_avatar"
+                android:textColor="?attr/TextColor"
+                android:text="Member"
+                android:layout_marginLeft="5dp"/>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/ic_action_navigation_more_vert"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/post_date_time"
+                android:text="2015-04-28, 19:04"
+
+                android:layout_below="@+id/post_membertype"
+                android:layout_alignLeft="@+id/post_membertype"
+                android:layout_alignStart="@+id/post_membertype" />
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/post_content"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentTop="true"
+            android:layout_above="@+id/quoteButton_container"
+            android:layout_marginBottom="5dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp">
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/quoteButton_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentRight="true"
+                android:clipToPadding="false">
+                <Button
+                    style="?attr/Borderless_Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+"
+                    android:id="@+id/button3"/>
+                <Button
+                    style="?attr/Borderless_Button"
+                    android:layout_width="wrap_content"
+                    android:minWidth="88dp"
+                    android:layout_height="wrap_content"
+                    android:text="Citera"
+                    android:id="@+id/button4" />
+            </LinearLayout>
+            <Button
+                style="?attr/Borderless_Button"
+                android:layout_width="wrap_content"
+                android:minWidth="88dp"
+                android:layout_height="wrap_content"
+                android:text="Ändra"
+                android:id="@+id/button5" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

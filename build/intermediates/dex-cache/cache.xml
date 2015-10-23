@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\exploded-aar\com.android.support\design\22.2.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Paid\debug\classes-b9e58f918d8efc4498e256e3fb2dfa3b8bebecd1.jar" />
+    </item>
+    <item
+        jar="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\7.5.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="29ebc7e04d877062317c8cc0e68b20f0c1fcda66">
+        <dex dex="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Free\release\classes-dbd8d6de2a077fcf6628c555a58605b6edcc0c8a.jar" />
+    </item>
+    <item
+        jar="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.5.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a78183f30e769a98ab4820794f597763088d3065">
+        <dex dex="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Free\release\classes-86ddd23eed008694d757055f9f68c4a7598446ad.jar" />
+    </item>
+    <item
+        jar="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Paid\debug\classes-b60b3b87764ced25aff33fafa23940e9b75284c6.jar" />
+    </item>
+    <item
+        jar="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\exploded-aar\com.android.support\design\22.2.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Paid\debug\classes-b9e58f918d8efc4498e256e3fb2dfa3b8bebecd1.jar" />
+    </item>
+    <item
+        jar="D:\Viktor\.gradle\caches\modules-2\files-2.1\org.jsoup\jsoup\1.8.1\1eb6690b0c629d7000c77a72df5e822fb974f521\jsoup-1.8.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1eb6690b0c629d7000c77a72df5e822fb974f521">
+        <dex dex="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Paid\debug\jsoup-1.8.1-56b5d3d6088a75ace1713675d5978f637c68c540.jar" />
+    </item>
+    <item
+        jar="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.5.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
+        <dex dex="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Free\release\classes-16bd1aa38cf26571c8dee300359d0a6bd72dde0b.jar" />
+    </item>
+    <item
+        jar="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Paid\debug\classes-b60b3b87764ced25aff33fafa23940e9b75284c6.jar" />
+    </item>
+    <item
+        jar="D:\Viktor\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.4\695b63d702f505b9b916e02272e3b6381bade7f\gson-2.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0695b63d702f505b9b916e02272e3b6381bade7f">
+        <dex dex="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Paid\debug\gson-2.4-a113ec256940b038788d59341c8b68bc5577ca24.jar" />
+    </item>
+    <item
+        jar="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Paid\debug\internal_impl-22.2.0-cc2d2e91361bc5ab85b308207c0549f62bf62600.jar" />
+    </item>
+    <item
+        jar="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Paid\debug\classes-ff61bdce4ad9742545577bcc8bad9b1cc02a5cc9.jar" />
+    </item>
+    <item
+        jar="D:\Viktor\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Paid\debug\support-annotations-22.2.0-f92b49077601d1abcb3434ffc25e9c674356073b.jar" />
+    </item>
+    <item
+        jar="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Paid\debug\classes-ff61bdce4ad9742545577bcc8bad9b1cc02a5cc9.jar" />
+    </item>
+    <item
+        jar="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Paid\debug\internal_impl-22.2.0-cc2d2e91361bc5ab85b308207c0549f62bf62600.jar" />
+    </item>
+    <item
+        jar="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\22.2.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="97f7e239e86ef994de894818fdd8a71d2e89d6aa">
+        <dex dex="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Paid\debug\classes-730b79be21977a7c4a1cf8f77f5bd8698c9de120.jar" />
+    </item>
+    <item
+        jar="D:\Viktor\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Paid\debug\support-annotations-22.2.0-f92b49077601d1abcb3434ffc25e9c674356073b.jar" />
+    </item>
+    <item
+        jar="D:\Viktor\.gradle\caches\modules-2\files-2.1\org.jsoup\jsoup\1.8.1\1eb6690b0c629d7000c77a72df5e822fb974f521\jsoup-1.8.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1eb6690b0c629d7000c77a72df5e822fb974f521">
+        <dex dex="D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Paid\debug\jsoup-1.8.1-56b5d3d6088a75ace1713675d5978f637c68c540.jar" />
+    </item>
+
+</items>

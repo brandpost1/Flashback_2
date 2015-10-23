@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MyTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- colorPrimary is used for the default action bar background -->
+        <item name="colorPrimary">@color/Light_ActionBar_Background</item>
+        <item name="android:textColorPrimary">#000000</item>
+
+        <!-- colorPrimaryDark is used for the status bar -->
+        <item name="colorPrimaryDark">#ff505050</item>
+
+        <!-- colorAccent is used as the default value for colorControlActivated,
+             which is used to tint widgets -->
+        <item name="colorAccent">#ff505050</item>
+
+        <!-- You can also set colorControlNormal, colorControlActivated
+         colorControlHighlight, and colorSwitchThumbNormal. -->
+
+        // Custom attributes
+        <item name="Categories_Background">@color/Light_Background</item>
+        <item name="Thread_Container_Background">@color/Thread_Container_Background</item>
+        <item name="Category_Item_Background">@color/Category_Item_Background</item>
+        <item name="Thread_Background">@color/Thread_Background</item>
+        <item name="Category_Background">@color/Category_Background</item>
+        <item name="Forum_Item_Background">@color/Forum_Item_Background</item>
+        <item name="Post_Background">@color/Post_Background</item>
+        <item name="Forum_Background">@color/Forum_Background</item>
+        <item name="Borderless_Button">@style/Borderless_Button</item>
+        <item name="TextColor">@color/TextColor</item>
+        <item name="TextColorSecondary">@color/TextColorSecondary</item>
+        <item name="OverFlowMenuStyle">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="ToolbarTheme">@style/ThemeOverlay.AppCompat.ActionBar</item>
+
+        <item name="FooterButtons">@color/Footer_Buttons</item>
+
+    </style>
+
+    <style name="MyTheme_Dark" parent="Theme.AppCompat.NoActionBar">
+        <!-- colorPrimary is used for the default action bar background -->
+        <item name="colorPrimary">@color/Dark_ActionBar_Background</item>
+        <item name="android:textColorPrimary">@color/TextColor_Dark</item>
+
+        <!-- colorPrimaryDark is used for the status bar -->
+        <item name="colorPrimaryDark">#ff505050</item>
+
+        <!-- colorAccent is used as the default value for colorControlActivated,
+             which is used to tint widgets -->
+        <item name="colorAccent">@color/GhostWhite</item>
+
+        <!-- You can also set colorControlNormal, colorControlActivated
+         colorControlHighlight, and colorSwitchThumbNormal. -->
+
+        // Custom attributes
+        <item name="Categories_Background">@color/Dark_Background</item>
+        <item name="Thread_Container_Background">@color/Dark_Thread_Container_Background</item>
+        <item name="Category_Item_Background">@color/Dark_Category_Item_Background</item>
+        <item name="Thread_Background">@color/Dark_Thread_Background</item>
+        <item name="Category_Background">@color/Dark_Category_Background</item>
+        <item name="Forum_Item_Background">@color/Dark_Forum_Item_Background</item>
+        <item name="Post_Background">@color/Dark_Post_Background</item>
+        <item name="Forum_Background">@color/Dark_Forum_Background</item>
+        <item name="Borderless_Button">@style/Borderless_Button_Dark</item>
+        <item name="TextColor">@color/TextColor_Dark</item>
+        <item name="TextColorSecondary">@color/TextColor_Dark_Secondary</item>
+        <item name="OverFlowMenuStyle">@style/ThemeOverlay.AppCompat.Dark</item>
+        <item name="ToolbarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+
+        <item name="FooterButtons">@color/Footer_Buttons_Dark</item>
+
+    </style>
+    
+    <style name="Borderless_Button_Dark" parent="@android:style/Widget.Button">
+        <item name="android:textColor">?attr/TextColor</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="Borderless_Button" parent="@android:style/Widget.Button">
+        <item name="android:textColor">?attr/TextColor</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+
+    </style>
+</resources>

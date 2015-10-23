@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -36,7 +37,6 @@ public class Fragment_Forums extends Fragment {
 	private View mContentView;
 
 	private ArrayList<View> mHideableViews;
-	private boolean isEditing = false;
 
 	// Bundle arguments
 	private String mUrl;
@@ -131,7 +131,7 @@ public class Fragment_Forums extends Fragment {
 			mName = getArguments().getString("Name");
 
 			// Set title
-			((ActionBarActivity)getActivity()).getSupportActionBar().setTitle(mName);
+			((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(mName);
 
 			DocumentFetcher.DocumentCallback callback = new DocumentFetcher.DocumentCallback<CategoryParser.Category>() {
 				@Override
@@ -181,7 +181,7 @@ public class Fragment_Forums extends Fragment {
 			}
 
 			// Restore the title
-			((ActionBarActivity)getActivity()).getSupportActionBar().setTitle(mName);
+			((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(mName);
 
 			// Add cards to contentview
 			for(CategoryParser.Forum forum : mContent.mForums) {
@@ -210,7 +210,6 @@ public class Fragment_Forums extends Fragment {
 				startActivity(intent);
 			}
 		}, 300);
-
 	}
 
 	private void addForumCard(final CategoryParser.Forum forum) {

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:flashback="http://schemas.android.com/apk/res-auto" >
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swiperefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <brandpost.dev.flashback_2.customviews.MyScrollView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:id="@+id/scroller"
+            android:paddingTop="62dp"
+            android:clipToPadding="false">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:id="@+id/card_container"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:clipToPadding="false">
+            </LinearLayout>
+        </brandpost.dev.flashback_2.customviews.MyScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressbar"
+        style="@android:style/Widget.DeviceDefault.ProgressBar.Large"
+        android:layout_gravity="center_horizontal|center_vertical" />
+
+</FrameLayout><!-- From: file:/D:/Viktor1/AndroidStudioProjects/Flashback_2/app/src/main/res/layout/fragment_threadspage.xml -->

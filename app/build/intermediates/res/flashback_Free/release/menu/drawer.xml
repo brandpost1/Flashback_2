@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_subheader"
+            android:title="NAVIGATION">
+            <menu>
+                <item
+                    android:id="@+id/navigation_sub_item_1"
+                    android:icon="@drawable/ic_action_home"
+                    android:title="Hem"/>
+                <item
+                    android:id="@+id/navigation_sub_item_2"
+                    android:icon="@drawable/ic_social_whatshot"
+                    android:title="Aktuella ämnen"/>
+                <item
+                    android:id="@+id/navigation_sub_item_3"
+                    android:icon="@drawable/ic_launcher"
+                    android:title="Nya ämnen"/>
+                <item
+                    android:id="@+id/navigation_sub_item_4"
+                    android:icon="@drawable/ic_launcher"
+                    android:title="Nya inlägg"/>
+            </menu>
+        </item>
+        <item
+            android:id="@+id/navigation_subheader2"
+            android:title="APP">
+            <menu>
+                <item
+                    android:id="@+id/navigation_sub_item_21"
+                    android:icon="@drawable/ic_action_settings"
+                    android:title="Uppdatera"/>
+                <item
+                    android:id="@+id/navigation_sub_item_22"
+                    android:icon="@drawable/ic_action_settings"
+                    android:title="Inställningar"/>
+                <item
+                    android:id="@+id/navigation_sub_item_23"
+                    android:icon="@drawable/ic_key"
+                    android:title="Logga in"/>
+            </menu>
+        </item>
+    </group>
+</menu><!-- From: file:/D:/Viktor1/AndroidStudioProjects/Flashback_2/app/src/main/res/menu/drawer.xml -->

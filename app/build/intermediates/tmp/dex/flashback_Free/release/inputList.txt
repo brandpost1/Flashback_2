@@ -1,0 +1,11 @@
+D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\classes\flashback_Free\release
+D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Free\release\support-annotations-22.2.0-f92b49077601d1abcb3434ffc25e9c674356073b.jar
+D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Free\release\classes-730b79be21977a7c4a1cf8f77f5bd8698c9de120.jar
+D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Free\release\classes-b9e58f918d8efc4498e256e3fb2dfa3b8bebecd1.jar
+D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Free\release\internal_impl-22.2.0-cc2d2e91361bc5ab85b308207c0549f62bf62600.jar
+D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Free\release\jsoup-1.8.1-56b5d3d6088a75ace1713675d5978f637c68c540.jar
+D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Free\release\classes-b60b3b87764ced25aff33fafa23940e9b75284c6.jar
+D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Free\release\classes-16bd1aa38cf26571c8dee300359d0a6bd72dde0b.jar
+D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Free\release\classes-dbd8d6de2a077fcf6628c555a58605b6edcc0c8a.jar
+D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Free\release\classes-86ddd23eed008694d757055f9f68c4a7598446ad.jar
+D:\Viktor1\AndroidStudioProjects\Flashback_2\app\build\intermediates\pre-dexed\flashback_Free\release\classes-ff61bdce4ad9742545577bcc8bad9b1cc02a5cc9.jar

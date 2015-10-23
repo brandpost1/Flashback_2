@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:textColor="?attr/TextColor"
+    android:id="@+id/post_root_textnode_text"
+    android:text="Lorem."
+    android:textStyle="bold"
+    xmlns:android="http://schemas.android.com/apk/res/android" /><!-- From: file:/D:/Viktor1/AndroidStudioProjects/Flashback_2/app/src/main/res/layout/post_root_quotername.xml -->

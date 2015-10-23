@@ -87,13 +87,16 @@ public class ThreadParser extends BaseParser {
         /**
          * Clean the document a bit
          */
-        threadDocument = new Cleaner(Whitelist.relaxed()
+
+        /*threadDocument = new Cleaner(Whitelist.basicWithImages()
                 .addAttributes("div", "class", "id", "style")
-		        .addTags("div", "table", "tr", "td", "tbody", "a", "b", "strong", "br")
+		        .addTags("div", "table", "tr", "td", "tbody", "a", "b", "strong", "br", "img")
                 .addAttributes("table", "class", "id", "style")
                 .addAttributes("tr", "class", "id", "style")
+                .addAttributes("img", "src")
                 .addAttributes("td", "class", "id", "style"))
-                .clean(threadDocument);
+                .clean(threadDocument);*/
+
         threadDocument = Jsoup.parse(threadDocument.select("div[id=posts]").html());
 
 		threadDocument.outputSettings(new Document.OutputSettings().prettyPrint(true).indentAmount(4));
@@ -126,6 +129,9 @@ public class ThreadParser extends BaseParser {
 
 	            Elements postMessage = post.select("div.post_message");
 
+                // Remove link in quote header
+                postMessage.select("div.post-quote-holder table.p2-4 tbody tr td.alt2.post-quote a:has(img[src^=https://static.flashback.org/img/])").remove();
+
 	            // Clean links
 	            cleanLinks(postMessage);
 
@@ -134,9 +140,6 @@ public class ThreadParser extends BaseParser {
 
 	            // Surround name of the quotee [newline]
 	            postMessage.select("div.post-quote-holder table.p2-4 tbody tr td.alt2.post-quote strong").before("{quoter_name}").after("{/quoter_name}");
-
-                // Remove link in quote header
-                postMessage.select("div.post-quote-holder table.p2-4 tbody tr td.alt2.post-quote a").remove();
 
 	            // Surround regular spoilers and spoilers within quotes
 	            postMessage.select("div.alt2.post-bbcode-spoiler").before("{spoilertext}").after("{/spoilertext}");
@@ -213,7 +216,14 @@ public class ThreadParser extends BaseParser {
 					e.printStackTrace();
 					text = "[[APP] - Fel vid länkomskrivning]";
 				}
-			}
+			} else if (text.startsWith("/leave.php?u=")) {
+                try {
+                    text = text.substring(13);
+                } catch (IndexOutOfBoundsException e) {
+                    e.printStackTrace();
+                    text = "[[APP] - Fel vid länkomskrivning]";
+                }
+            }
 
 			try {
 				text = URLDecoder.decode(text, "UTF-8");

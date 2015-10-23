@@ -20,7 +20,7 @@ import javax.net.ssl.HttpsURLConnection;
 public class DocumentFetcher extends AsyncTask<String, String, Object> {
 
     public interface DocumentCallback<T> {
-        public void onDocumentFetched(T document);
+        void onDocumentFetched(T document);
     }
 
     private DocumentCallback mCallback;

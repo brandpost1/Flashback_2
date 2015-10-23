@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pager_overlay"
+    android:background="#00000000"
+    android:clickable="true">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="120dp"
+        android:background="?attr/FooterButtons"
+        android:layout_gravity="center_vertical"
+        android:layout_centerVertical="true"
+        android:elevation="3dp"
+        android:padding="8dp"
+        android:clickable="true">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp">
+            <Button
+                style="?attr/Borderless_Button"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textSize="30dp"
+                android:text="-"
+                android:id="@+id/goto_minus" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1456"
+                android:minWidth="100dp"
+                android:gravity="center"
+                android:textSize="50dp"/>
+            <Button
+                style="?attr/Borderless_Button"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textSize="30dp"
+                android:text="+"
+                android:id="@+id/goto_plus" />
+        </LinearLayout>
+        <Button
+            style="?attr/Borderless_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:text="ÖPPNA"
+            android:id="@+id/thread_gotopage" />
+    </RelativeLayout>
+</RelativeLayout><!-- From: file:/D:/Viktor1/AndroidStudioProjects/Flashback_2/app/src/main/res/layout/goto_page_overlay.xml -->

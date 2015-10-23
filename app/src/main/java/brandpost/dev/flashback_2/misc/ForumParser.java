@@ -30,6 +30,7 @@ public class ForumParser extends BaseParser<ForumParser.ForumPage>{
         public String mTitle;
         public String mAuthor;
 	    public String mUrl;
+		public String mId;
         public String mNumPages;
         public String mNumReplies;
         public String mNumViews;
@@ -74,11 +75,18 @@ public class ForumParser extends BaseParser<ForumParser.ForumPage>{
 			}
 			thread.mTitle = "Viktigt: " + thread.mTitle;
 
-					thread.mAuthor = stickythread.select("td.alt1.td_title span[onclick^=window.open('/u]").text();
+			thread.mAuthor = stickythread.select("td.alt1.td_title span[onclick^=window.open('/u]").text();
 			thread.mUrl = stickythread.select("td.alt1.td_title a[id^=thread_title]").attr("abs:href");
+			thread.mId = thread.mUrl.substring(thread.mUrl.indexOf("/t") + 2);
 			thread.mNumViews = stickythread.select("td.alt2.td_views").text();
 			thread.mNumReplies = stickythread.select("td.alt1.td_replies").text();
 			thread.mNumPages = stickythread.select("td.alt1.td_title a.thread-pagenav-lastpage").text();
+			if(thread.mNumPages.length() > 1) {
+				// Removes ( and ) around number
+				thread.mNumPages = thread.mNumPages.substring(1, thread.mNumPages.length() - 1);
+			} else {
+				thread.mNumPages = "1";
+			}
 			thread.mLastActivity = stickythread.select("td.alt2.td_last_post").text();
 
 			boolean isLocked = !stickythread.select("td.alt1.td_status a.clear.icon-thread-lock").isEmpty();
@@ -114,9 +122,16 @@ public class ForumParser extends BaseParser<ForumParser.ForumPage>{
 
 		    thread.mAuthor = regularthread.select("td.alt1.td_title span[onclick^=window.open('/u]").text();
 		    thread.mUrl = regularthread.select("td.alt1.td_title a[id^=thread_title]").attr("abs:href");
+			thread.mId = thread.mUrl.substring(thread.mUrl.indexOf("/t") + 2);
 		    thread.mNumViews = regularthread.select("td.alt2.td_views").text();
 		    thread.mNumReplies = regularthread.select("td.alt1.td_replies").text();
 		    thread.mNumPages = regularthread.select("td.alt1.td_title a.thread-pagenav-lastpage").text();
+			if(thread.mNumPages.length() > 1) {
+				// Removes ( and ) around number
+				thread.mNumPages = thread.mNumPages.substring(1, thread.mNumPages.length() - 1);
+			} else {
+				thread.mNumPages = "1";
+			}
 		    thread.mLastActivity = regularthread.select("td.alt2.td_last_post").text();
 
 		    boolean isLocked = !regularthread.select("td.alt1.td_status a.clear.icon-thread-lock").isEmpty();

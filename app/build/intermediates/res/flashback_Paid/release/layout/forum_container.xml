@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:flashback="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:elevation="3dp"
+    flashback:cardBackgroundColor="?attr/Forum_Item_Background"
+    flashback:cardCornerRadius="0dp"
+    android:layout_marginBottom="3dp"
+    android:foreground="?android:attr/selectableItemBackground">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <LinearLayout
+            android:id="@+id/forum_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/forum_name"
+                android:text="Dator- och konsolspel"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="?attr/TextColor"
+                android:layout_marginLeft="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/forum_info"
+                android:text="32 820 ämnen • 1 970 005 inlägg • 644 besökare"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="?attr/TextColorSecondary"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="2dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/subforum_container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:layout_above="@+id/forumAction_container">
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/forumAction_container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:animateLayoutChanges="true">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:id="@+id/forum_block_button"
+                android:visibility="gone"
+                android:background="@android:drawable/ic_menu_close_clear_cancel"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView><!-- From: file:/D:/Viktor1/AndroidStudioProjects/Flashback_2/app/src/main/res/layout/forum_container.xml -->
